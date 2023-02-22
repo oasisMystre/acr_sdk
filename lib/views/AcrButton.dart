@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
@@ -19,7 +18,7 @@ class AcrButton extends StatefulWidget {
   final Widget? inactiveChild;
 
   final Function(String message)? onMessage;
-  final Future<void> Function(Music music, Tuple2<int, int> offsets) onValue;
+  final Future <void> Function(Music music, Tuple2<int, int> offsets) onValue;
 
   final AcrSdk acrSdk;
 
@@ -58,8 +57,7 @@ class _AcrButtonState extends State<AcrButton> {
   }
 
   startRecording() async {
-    String? path = kIsWeb ? null : await recordPath;
-
+    String path = await recordPath;
     sdk.record.start(path: path, encoder: AudioEncoder.wav).then(
       (state) {
         _timer = Timer(
@@ -67,18 +65,17 @@ class _AcrButtonState extends State<AcrButton> {
           () async {
             retryDepth += 1;
             duration += timeIncrement;
-            path = await sdk.record.stop(changeState: false) ?? path;
+            await sdk.record.stop(changeState: false);
             int timestamp = DateTime.now().millisecondsSinceEpoch;
 
-            sdk.sendSample(path: path!).then((metadata) async {
+            sdk.sendSample(path: path).then((metadata) async {
               Music music = metadata.music.reduce(
                 (a, b) => a.score > b.score ? a : b,
               );
 
               reset();
               widget.onMessage!("${music.title} By ${music.artist}");
-              await widget.onValue(
-                  music, Tuple2(timestamp, music.playOffsetMs));
+              await widget.onValue(music, Tuple2(timestamp, music.playOffsetMs));
             }).onError((error, _) {
               HttpError httpError = error as HttpError;
               switch (httpError.httpStatus) {
