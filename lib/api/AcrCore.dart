@@ -60,13 +60,11 @@ class AcrCore {
       httpMethod,
       Uri.parse("http://$host$apiPath"),
     );
-    log("http://$host$apiPath");
 
     request.files.add(sample);
     request.fields.addAll(await getData(sample.length));
 
     final StreamedResponse response = await request.send();
-    log(response.toString());
 
     Completer<Metadata> completer = Completer();
 

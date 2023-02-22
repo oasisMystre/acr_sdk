@@ -1,0 +1,87 @@
+{
+    "result_type": 0,
+    "cost_time": 0.97899985313416,
+    "status": {
+        "msg": "Success",
+        "code": 0,
+        "version": "1.0"
+    },
+    "metadata": {
+        "timestamp_utc": "2023-02-19 13:51:21",
+        "music": [
+            {
+                "artists": [
+                    {
+                        "name": "Wande Coal"
+                    },
+                    {
+                        "name": "Olamide"
+                    }
+                ],
+                "acrid": "08c3c13ca16763054bf4844587115a00",
+                "external_ids": {},
+                "external_metadata": {
+                    "youtube": {
+                        "vid": "ny4XxmAWIig"
+                    },
+                    "deezer": {
+                        "album": {
+                            "name": "Kpe Paso"
+                        },
+                        "artists": [
+                            {
+                                "name": "Wande Coal",
+                                "langs": [
+                                    {
+                                        "code": "ja-hrkt",
+                                        "name": "ワンド・コール"
+                                    },
+                                    {
+                                        "code": "en",
+                                        "name": "Wande Coal"
+                                    },
+                                    {
+                                        "code": "ja-jpan",
+                                        "name": "Wande Coal"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "Olamide",
+                                "langs": [
+                                    {
+                                        "code": "en",
+                                        "name": "Olamide"
+                                    }
+                                ]
+                            }
+                        ],
+                        "track": {
+                            "name": "Kpe Paso",
+                            "id": "2124764947"
+                        }
+                    }
+                },
+                "result_from": 3,
+                "label": "MERLIN - Starstruck Management \/ EMPIRE",
+                "duration_ms": 176000,
+                "db_begin_time_offset_ms": 83840,
+                "db_end_time_offset_ms": 86740,
+                "sample_begin_time_offset_ms": 0,
+                "sample_end_time_offset_ms": 3300,
+                "play_offset_ms": 86740,
+                "release_date": "2023-02-02",
+                "title": "Kpe Paso (feat. Olamide)",
+                "album": {
+                    "name": "Kpe Paso (feat. Olamide)"
+                },
+                "genres": [
+                    {
+                        "name": "African"
+                    }
+                ],
+                "score": 76
+            }
+        ]
+    }
+}

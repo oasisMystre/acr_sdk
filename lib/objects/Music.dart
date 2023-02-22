@@ -1,7 +1,10 @@
+import 'package:acr_sdk/objects/ExternalMetadata.dart';
+
 import 'Artist.dart';
 
 class Music {
   final List<ACRArtist> artists;
+  final ExternalMetadata externalMetadata;
   final int durationMs, playOffsetMs, score;
   final String releaseDate, title, acrId, label;
 
@@ -13,6 +16,7 @@ class Music {
     this.score,
     this.acrId,
     this.label,
+    this.externalMetadata,
     this.artists,
   );
 
@@ -27,6 +31,7 @@ class Music {
       data["score"],
       data["acrid"],
       data["label"],
+      ExternalMetadata.fromJson(data["external_metadata"]),
       List<ACRArtist>.from(
         data["artists"].map((artist) => ACRArtist.fromJson(artist)),
       ),
